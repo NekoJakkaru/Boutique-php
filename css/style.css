@@ -1,11 +1,12 @@
 /*-------------------- Mother --------------------*/
 
-
-
-
 /*-------------------- Mother --------------------*/
 
 /*-------------------- Header --------------------*/
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
 
 i {
   font-size: 2.5em;
@@ -14,18 +15,51 @@ i {
 /*-------------------- Header --------------------*/
 
 /*-------------------- Main --------------------*/
-#carouselExampleIndicators, #carouselExampleControls{
-max-width: 300px;
-margin: auto;
+
+#carouselExampleIndicators, #carouselExampleControls {
+  max-width: 300px;
+  margin: auto;
 }
 
-img{
-    max-width: 300px;
+h2 {
+  margin-bottom: 5%;
 }
 
-form{
-    margin: auto;
-    max-width: 1000px;
+img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+form {
+  margin: auto;
+  max-width: 1000px;
+}
+
+.art1 {
+  border: 2px dashed black;
+  border-radius: 10px;
+  padding: 5%;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.art1 p {
+  text-align: justify;
+  font-family: 'Indie Flower', cursive;
+}
+
+#login {
+  border: 2px outset black;
+  border-radius: 10px;
+  padding: 5%;
+  text-align: center;
+  margin-top: 2em;
+  height: 20em;
+}
+
+.right {
+  position: fixed;
+  width: 20%;
 }
 
 /*-------------------- Main --------------------*/
