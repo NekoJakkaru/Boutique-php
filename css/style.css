@@ -21,7 +21,11 @@ margin: auto;
 
 img{
     max-width: 300px;
+}
 
+form{
+    margin: auto;
+    max-width: 1000px;
 }
 
 /*-------------------- Main --------------------*/
