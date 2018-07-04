@@ -14,7 +14,14 @@ i {
 /*-------------------- Header --------------------*/
 
 /*-------------------- Main --------------------*/
+#carouselExampleIndicators, #carouselExampleControls{
+max-width: 300px;
+margin: auto;
+}
 
+img{
+    max-width: 300px;
 
+}
 
 /*-------------------- Main --------------------*/
