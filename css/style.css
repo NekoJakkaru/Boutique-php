@@ -35,7 +35,7 @@ form {
   max-width: 1000px;
 }
 
-.art1 {
+article {
   border: 2px dashed black;
   border-radius: 10px;
   padding: 5%;
@@ -43,7 +43,7 @@ form {
   margin-bottom: 10%;
 }
 
-.art1 p {
+article p {
   text-align: justify;
   font-family: 'Indie Flower', cursive;
 }
@@ -60,6 +60,12 @@ form {
 .right {
   position: fixed;
   width: 20%;
+}
+
+article a {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 0.5em;
 }
 
 /*-------------------- Main --------------------*/

@@ -1,45 +1,52 @@
 $(document).ready(function() {
 
-    // Creation article
-    for (var i = 0; i < 10; i++) {
+  var GET_PARAM = function(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+  };
 
-        var div = $("<div class=\"col-md-3\">");
-        var article = $("<article>");
-        var figure = $("<figure>");
-        var h2 = $("<h2>");
-        var img = $("<img>");
-        var h3 = $("<h3>");
-        var h4 = $("<h4>");
-        var p = $("<p>");
-        var btnMore = $("<button>");
+  // Creation article
+  for (var i = 0; i < catalog.length; i++) {
 
-        $(article).text("Produit " + 1 + "");
-        $(img).attr('src', 'img/cat6.jpg');
-        $(p).text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-        $(btnMore).text("View more...");
+    var div = $("<div class=\"col-md-3\">");
+    var article = $("<article>");
+    var figure = $("<figure>");
+    var h2 = $("<h2>");
+    var img = $("<img>");
+    var h3 = $("<h3>");
+    var h4 = $("<h4>");
+    var p = $("<p>");
+    var btnMore = $("<a href='product.html?product_id=" + i + "'>");
+    var buyB = $("<button>");
 
-        $(".art-container").append(div);
-        $(div).append(article);
-        $(article).append(figure, h3, h4, p);
-        $(figure).append(img);
-        $(article).append(h2);
-        $(article).append(btnMore);
-    };
-    // Fin creation article
+    $(h2).text(catalog[i]['name']);
+    $(h3).text('Price : ' + catalog[i]['price']);
+    $(h4).text('Quantity : ' + catalog[i]['quantity']);
+    $(img).attr('src', catalog[i]['pictures']);
+    $(p).text(catalog[i]['description'])
+    $(btnMore).text("View more...");
+
+    $(".art-container").append(div);
+    $(div).append(article);
+    $(article).append(h2);
+    $(article).append(figure, h3, h4, p);
+    $(figure).append(img);
+    $(article).append(btnMore);
+
+
+  };
+  // Fin creation article
+  var i = GET_PARAM("product_id");
+  var myProduct = catalog[i];
+
+  var productP = $('.productP');
+  var quant = $('.quantity');
+  var cost = $('.price');
+
+  (productP).text(myProduct['description']);
+  (quant).text('Quantity: '+myProduct['quantity']+'');
+  (cost).text('Price: '+myProduct['price']+' cents');
+
+
+  console.log(myProduct);
 
 });
-
-
-
-// <div class="col-sm col-md-4 col-lg-2">
-//     <article class="art1">
-//       <figure>
-//         <img src="https://picsum.photos/200/300/?random" alt="https://picsum.photos/200/300/?random">
-//       </figure>
-//       <h3>Titre de l'article</h3>
-//       <h4> class="price">Prix: 10 000 000 000$</h4>
-//       <h4> class="quantity">Quantity: 1</h4>
-//       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-//         aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-//     </article>
-// </div>
