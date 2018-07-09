@@ -4,6 +4,7 @@ $(document).ready(function() {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
   };
 
+  var myProduct = '';
   // Creation article
   for (var i = 0; i < catalog.length; i++) {
 
@@ -39,7 +40,7 @@ $(document).ready(function() {
   // Fin creation article
   var i = GET_PARAM("product_id");
   if (i) {
-    var myProduct = catalog[i];
+    myProduct = catalog[i];
 
     var productP = $('.productP');
     var quant = $('.quantity');
@@ -54,24 +55,20 @@ $(document).ready(function() {
 
   // Panier
 
-  var cart = {};
   $('.btnBuy').click(function() {
 
+    // if (cart[i] == null) {
+    //   cart[i] = 1;
+    // } else {
+    //   cart[i]++;
+    // }
 
-    var listPanier = $("<li>");
-    $('#shopList').append(listPanier);
-    if (cart[i] == null) {
-      cart[i] = 1;
-    } else {
-      cart[i]++;
-    }
-    console.log(cart);
-    sessionStorage.setItem('product'+i+'', cart[i]);
-    var recup = sessionStorage.getItem('product'+i+'', cart[i]);
-    console.log(recup);
+    console.log(myProduct['quantity']);
 
 
-
+    var liPanier = $("<li>");
+    (liPanier).text(myProduct['quantity']);
+    $('#shopList').append(liPanier);
 
   });
 
