@@ -8,15 +8,15 @@ $(document).ready(function() {
   for (var i = 0; i < catalog.length; i++) {
 
     var div = $("<div class=\"col-md-3\">");
-    var article = $("<article>");
+    var article = $("<article class='prodArt'>");
     var figure = $("<figure>");
     var h2 = $("<h2>");
     var img = $("<img>");
     var h3 = $("<h3>");
     var h4 = $("<h4>");
     var p = $("<p>");
-    var btnMore = $("<a href='product.html?product_id=" + i + "'>");
-    var buyB = $("<button>");
+    var btnMore = $("<a class='viewMore' href='product.html?product_id=" + i + "'>");
+    var buyB = $("<button class='btnBuy'>Acheter</button>");
 
     $(h2).text(catalog[i]['name']);
     $(h3).text('Price : ' + catalog[i]['price']);
@@ -31,6 +31,7 @@ $(document).ready(function() {
     $(article).append(figure, h3, h4, p);
     $(figure).append(img);
     $(article).append(btnMore);
+    $(article).append(buyB);
 
 
   };
