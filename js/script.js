@@ -38,33 +38,42 @@ $(document).ready(function() {
   };
   // Fin creation article
   var i = GET_PARAM("product_id");
-  if(i) {
-      var myProduct = catalog[i];
+  if (i) {
+    var myProduct = catalog[i];
 
-      var productP = $('.productP');
-      var quant = $('.quantity');
-      var cost = $('.price');
+    var productP = $('.productP');
+    var quant = $('.quantity');
+    var cost = $('.price');
 
-      (productP).text(myProduct['description']);
-      (quant).text('Quantity: '+myProduct['quantity']+'');
-      (cost).text('Price: '+myProduct['price']+' cents');
+    (productP).text(myProduct['description']);
+    (quant).text('Quantity: ' + myProduct['quantity'] + '');
+    (cost).text('Price: ' + myProduct['price'] + ' cents');
 
   }
 
 
-// Panier
+  // Panier
 
-var cart = {};
-$('.btnBuy').click(function(){
+  var cart = {};
+  $('.btnBuy').click(function() {
+
+
     var listPanier = $("<li>");
     $('#shopList').append(listPanier);
     if (cart[i] == null) {
-        cart[i] = 1;
-        }else{
-        cart[i]++;
+      cart[i] = 1;
+    } else {
+      cart[i]++;
     }
-console.log(cart);
-});
+    console.log(cart);
+    sessionStorage.setItem('product'+i+'', cart[i]);
+    var recup = sessionStorage.getItem('product'+i+'', cart[i]);
+    console.log(recup);
+
+
+
+
+  });
 
 
 });
