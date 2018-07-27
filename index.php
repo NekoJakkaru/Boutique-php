@@ -15,6 +15,7 @@
 
 <body>
 
+
   <div class="container-fluid">
 
     <div class="row justify-content-center text-center">
@@ -147,8 +148,8 @@
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
-  <script type="text/javascript" src="js/catalogue.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <!-- <script type="text/javascript" src="js/catalogue.js"></script>
+  <script type="text/javascript" src="js/script.js"></script> -->
 
 </body>
 

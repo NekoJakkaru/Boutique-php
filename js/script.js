@@ -6,37 +6,37 @@ $(document).ready(function() {
 
   var myProduct = '';
   // Creation article
-  for (var i = 0; i < catalog.length; i++) {
-
-    var div = $("<div class=\"col-md-3\">");
-    var article = $("<article class='prodArt'>");
-    var figure = $("<figure>");
-    var h2 = $("<h2>");
-    var img = $("<img>");
-    var h3 = $("<h3>");
-    var h4 = $("<h4>");
-    var p = $("<p>");
-    var btnMore = $("<a class='viewMore' href='product.html?product_id=" + i + "'>");
-    var buyB = $("<button class='btnBuy'>Acheter</button>");
-
-    $(h2).text(catalog[i]['name']);
-    $(h3).text('Price : ' + catalog[i]['price']);
-    $(h4).text('Quantity : ' + catalog[i]['quantity']);
-    $(img).attr('src', catalog[i]['pictures']);
-    $(p).text(catalog[i]['description'])
-    $(btnMore).text("View more...");
-
-    $(".art-container").append(div);
-    $(div).append(article);
-    $(article).append(h2);
-    $(article).append(figure, h3, h4, p);
-    $(figure).append(img);
-    $(article).append(btnMore);
-    $(article).append(buyB);
-
-
-
-  };
+  // for (var i = 0; i < catalog.length; i++) {
+  //
+  //   var div = $("<div class=\"col-md-3\">");
+  //   var article = $("<article class='prodArt'>");
+  //   var figure = $("<figure>");
+  //   var h2 = $("<h2>");
+  //   var img = $("<img>");
+  //   var h3 = $("<h3>");
+  //   var h4 = $("<h4>");
+  //   var p = $("<p>");
+  //   var btnMore = $("<a class='viewMore' href='product.html?product_id=" + i + "'>");
+  //   var buyB = $("<button class='btnBuy'>Acheter</button>");
+  //
+  //   $(h2).text(catalog[i]['name']);
+  //   $(h3).text('Price : ' + catalog[i]['price']);
+  //   $(h4).text('Quantity : ' + catalog[i]['quantity']);
+  //   $(img).attr('src', catalog[i]['pictures']);
+  //   $(p).text(catalog[i]['description'])
+  //   $(btnMore).text("View more...");
+  //
+  //   $(".art-container").append(div);
+  //   $(div).append(article);
+  //   $(article).append(h2);
+  //   $(article).append(figure, h3, h4, p);
+  //   $(figure).append(img);
+  //   $(article).append(btnMore);
+  //   $(article).append(buyB);
+  //
+  //
+  //
+  // };
   // Fin creation article
   var i = GET_PARAM("product_id");
   if (i) {

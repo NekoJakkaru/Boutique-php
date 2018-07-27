@@ -15,7 +15,11 @@
 </head>
 
 <body>
+    <?php
 
+    $dbh = new PDO('mysql:host=localhost;dbname=boutique', "admin", "plop");
+    $products = $dbh->query('SELECT * from Produit');
+    ?>
   <div class="container-fluid">
 
     <div class="row justify-content-center text-center">
@@ -77,6 +81,51 @@
           <section>
             <div class="row art-container">
 
+                <?php
+
+
+
+                  // $(h2).text(catalog[i]['name']);
+                  // $(h3).text('Price : ' + catalog[i]['price']);
+                  // $(h4).text('Quantity : ' + catalog[i]['quantity']);
+                  // $(img).attr('src', catalog[i]['pictures']);
+                  // $(p).text(catalog[i]['description'])
+                  // $(btnMore).text("View more...");
+                  //
+                  // $(".art-container").append(div);
+                  // $(div).append(article);
+                  // $(article).append(h2);
+                  // $(article).append(figure, h3, h4, p);
+                  // $(figure).append(img);
+                  // $(article).append(btnMore);
+                  // $(article).append(buyB);
+
+
+
+
+
+                $products->setFetchMode(PDO::FETCH_OBJ);
+                    while( $product = $products->fetch() )
+                        { ?>
+                            <div class="col-md-3">
+                            <article class='prodArt'>
+                            <figure>
+                            <h2><?php echo $product->nom ?></h2>
+                            <img src="<?php echo $product->thumb ?>">
+                            <h3></h3>
+                            <h4><?php echo $product->price ?></h4>
+                            <p><?php echo $product->description ?></p>
+                            <a class="viewMore" href="product.html?product_id='.$result->id.'">View More</a>
+                            <button class='btnBuy'>Acheter</button>
+                            </figure>
+                            </article>
+                            </div>
+                        <?php }
+                        echo 'Article : '.$product->nom.'<br>';
+                        echo 'Texte : '.$product->description.'<br>';
+                        echo 'Prix : '.$product->price.'<br>';
+                        echo 'Img : '.$product->thumb.'<br>';
+                        $products->closeCursor(); ?>
 
 
             </div>
@@ -91,9 +140,9 @@
 
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
+<!--
   <script type="text/javascript" src="js/catalogue.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/script.js"></script> -->
 
 </body>
 
